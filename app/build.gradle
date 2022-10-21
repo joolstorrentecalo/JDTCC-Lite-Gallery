@@ -13,11 +13,11 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.simplemobiletools.gallery.pro"
-        minSdk 21
+        applicationId "com.jtcstudios.gallery"
+        minSdk 29
         targetSdk 33
-        versionCode 378
-        versionName "6.25.3"
+        versionCode 1
+        versionName "1.0.0"
         setProperty("archivesBaseName", "gallery-$versionCode")
         vectorDrawables.useSupportLibrary = true
     }

@@ -256,7 +256,6 @@ class ViewPagerActivity : SimpleActivity(), ViewPager.OnPageChangeListener, View
                 R.id.menu_save_as -> saveImageAs()
                 R.id.menu_create_shortcut -> createShortcut()
                 R.id.menu_resize -> resizeImage()
-                R.id.menu_settings -> launchSettings()
                 else -> return@setOnMenuItemClickListener false
             }
             return@setOnMenuItemClickListener true

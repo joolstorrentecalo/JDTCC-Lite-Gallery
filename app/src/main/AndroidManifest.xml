@@ -140,29 +140,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.simplemobiletools.commons.activities.AboutActivity"
-            android:exported="false"
-            android:label="@string/about"
-            android:parentActivityName=".activities.MainActivity" />
 
-        <activity
-            android:name="com.simplemobiletools.commons.activities.CustomizationActivity"
-            android:exported="false"
-            android:label="@string/customize_colors"
-            android:parentActivityName=".activities.SettingsActivity" />
-
-        <activity
-            android:name=".activities.SettingsActivity"
-            android:exported="true"
-            android:label="@string/settings"
-            android:parentActivityName=".activities.MainActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name=".activities.PhotoVideoActivity"
@@ -189,50 +167,20 @@
             android:exported="false"
             android:theme="@style/FullScreenTheme" />
 
-        <activity
-            android:name=".activities.IncludedFoldersActivity"
-            android:exported="false"
-            android:label="@string/include_folders"
-            android:parentActivityName=".activities.SettingsActivity" />
 
-        <activity
-            android:name=".activities.ExcludedFoldersActivity"
-            android:exported="false"
-            android:label="@string/excluded_folders"
-            android:parentActivityName=".activities.SettingsActivity" />
-
-        <activity
-            android:name=".activities.HiddenFoldersActivity"
-            android:exported="false"
-            android:label="@string/hidden_folders"
-            android:parentActivityName=".activities.SettingsActivity" />
 
         <activity
             android:name=".activities.PhotoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="image/*" />
-            </intent-filter>
         </activity>
 
         <activity
             android:name=".activities.VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="video/*" />
-            </intent-filter>
         </activity>
 
         <activity

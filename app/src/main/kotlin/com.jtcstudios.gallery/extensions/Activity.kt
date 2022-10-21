@@ -35,7 +35,6 @@ import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.gallery.pro.BuildConfig
 import com.simplemobiletools.gallery.pro.R
-import com.simplemobiletools.gallery.pro.activities.SettingsActivity
 import com.simplemobiletools.gallery.pro.activities.SimpleActivity
 import com.simplemobiletools.gallery.pro.dialogs.PickDirectoryDialog
 import com.simplemobiletools.gallery.pro.helpers.RECYCLE_BIN
@@ -79,53 +78,7 @@ fun Activity.launchCamera() {
     launchActivityIntent(intent)
 }
 
-fun SimpleActivity.launchSettings() {
-    hideKeyboard()
-    startActivity(Intent(applicationContext, SettingsActivity::class.java))
-}
 
-fun SimpleActivity.launchAbout() {
-    val licenses = LICENSE_GLIDE or LICENSE_CROPPER or LICENSE_RTL or LICENSE_SUBSAMPLING or LICENSE_PATTERN or LICENSE_REPRINT or LICENSE_GIF_DRAWABLE or
-        LICENSE_PICASSO or LICENSE_EXOPLAYER or LICENSE_PANORAMA_VIEW or LICENSE_SANSELAN or LICENSE_FILTERS or LICENSE_GESTURE_VIEWS or
-        LICENSE_APNG
-
-    val faqItems = arrayListOf(
-        FAQItem(R.string.faq_3_title, R.string.faq_3_text),
-        FAQItem(R.string.faq_12_title, R.string.faq_12_text),
-        FAQItem(R.string.faq_7_title, R.string.faq_7_text),
-        FAQItem(R.string.faq_14_title, R.string.faq_14_text),
-        FAQItem(R.string.faq_1_title, R.string.faq_1_text),
-        FAQItem(R.string.faq_5_title_commons, R.string.faq_5_text_commons),
-        FAQItem(R.string.faq_5_title, R.string.faq_5_text),
-        FAQItem(R.string.faq_4_title, R.string.faq_4_text),
-        FAQItem(R.string.faq_6_title, R.string.faq_6_text),
-        FAQItem(R.string.faq_8_title, R.string.faq_8_text),
-        FAQItem(R.string.faq_10_title, R.string.faq_10_text),
-        FAQItem(R.string.faq_11_title, R.string.faq_11_text),
-        FAQItem(R.string.faq_13_title, R.string.faq_13_text),
-        FAQItem(R.string.faq_15_title, R.string.faq_15_text),
-        FAQItem(R.string.faq_2_title, R.string.faq_2_text),
-        FAQItem(R.string.faq_18_title, R.string.faq_18_text),
-        FAQItem(R.string.faq_9_title_commons, R.string.faq_9_text_commons),
-    )
-
-    if (!resources.getBoolean(R.bool.hide_google_relations)) {
-        faqItems.add(FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons))
-        faqItems.add(FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons))
-        faqItems.add(FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons))
-        faqItems.add(FAQItem(R.string.faq_10_title_commons, R.string.faq_10_text_commons))
-    }
-
-    if (isRPlus() && !isExternalStorageManager()) {
-        faqItems.add(0, FAQItem(R.string.faq_16_title, R.string.faq_16_text))
-        faqItems.add(1, FAQItem(R.string.faq_17_title, R.string.faq_17_text))
-        faqItems.removeIf { it.text == R.string.faq_7_text }
-        faqItems.removeIf { it.text == R.string.faq_14_text }
-        faqItems.removeIf { it.text == R.string.faq_8_text }
-    }
-
-    startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
-}
 
 fun BaseSimpleActivity.handleMediaManagementPrompt(callback: () -> Unit) {
     if (canManageMedia() || isExternalStorageManager()) {
