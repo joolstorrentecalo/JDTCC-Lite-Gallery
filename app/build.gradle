@@ -60,6 +60,7 @@ android {
         proprietary {}
         foss {}
         prepaid {}
+        core {}
     }
 
     lintOptions {
