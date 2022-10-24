@@ -125,6 +125,7 @@
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="ffffff" />
+                                      <entry key="outputName" value="ic_launchers" />
                                     </map>
                                   </option>
                                 </PersistentState>
