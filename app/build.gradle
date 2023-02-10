@@ -62,19 +62,22 @@ android {
         core {}
     }
 
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     packagingOptions {
-        exclude 'META-INF/library_release.kotlin_module'
+        resources {
+            excludes += ['META-INF/library_release.kotlin_module']
+        }
     }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    namespace 'com.simplemobiletools.gallery.pro'
 }
 
 dependencies {
